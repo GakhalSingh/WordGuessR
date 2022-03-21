@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,68 +16,173 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WordGuessR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-7z-5gH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WordGuessR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-7z-5gH">
                                 <rect key="frame" x="109" y="110" width="197" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCM-kS-ezY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCM-kS-ezY">
                                 <rect key="frame" x="55" y="340" width="135" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Tegestellingen"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Tegestellingen" cornerStyle="dynamic">
+                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0m-hI-x8L">
-                                <rect key="frame" x="218" y="340" width="135" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Natuur"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-Kp-gGp">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-Kp-gGp">
                                 <rect key="frame" x="55" y="468" width="135" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Gezegdes"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Gezegdes">
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="lIH-A2-Ggk" kind="popoverPresentation" popoverAnchorView="ED6-Kp-gGp" id="3DQ-tD-p8y">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH8-sK-Zbv">
-                                <rect key="frame" x="218" y="468" width="135" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemTealColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Synoniemen"/>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-o3-UuW">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-o3-UuW">
                                 <rect key="frame" x="55" y="793" width="298" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K37-Oo-ZtN">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K37-Oo-ZtN">
                                 <rect key="frame" x="114" y="237" width="181" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Nederlands"/>
                                     <segment title="Engels"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copyright ROC Mondriaan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNV-3D-CwO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright ROC Mondriaan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNV-3D-CwO">
                                 <rect key="frame" x="104" y="717" width="200" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH8-sK-Zbv">
+                                <rect key="frame" x="218" y="468" width="135" height="75"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Synoniemen">
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0m-hI-x8L">
+                                <rect key="frame" x="218" y="340" width="135" height="75"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Natuur">
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K37-Oo-ZtN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="114" id="E3j-yt-JL0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TH8-sK-Zbv" secondAttribute="trailing" constant="61" id="Ehe-go-h6d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P1p-7z-5gH" secondAttribute="trailing" constant="108" id="FEy-2D-p6D"/>
+                            <constraint firstItem="mCM-kS-ezY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="FFQ-up-gsW"/>
+                            <constraint firstItem="K37-Oo-ZtN" firstAttribute="top" secondItem="P1p-7z-5gH" secondAttribute="bottom" constant="85" id="HEc-bP-a12"/>
+                            <constraint firstItem="P1p-7z-5gH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="66" id="KYg-x9-npr"/>
+                            <constraint firstItem="P1p-7z-5gH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="Lg1-PA-PE7"/>
+                            <constraint firstItem="aPm-o3-UuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="LiY-3l-0EY"/>
+                            <constraint firstItem="aPm-o3-UuW" firstAttribute="top" secondItem="GNV-3D-CwO" secondAttribute="bottom" constant="55" id="NvI-i9-9NW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y0m-hI-x8L" secondAttribute="trailing" constant="61" id="acc-Ii-20d"/>
+                            <constraint firstItem="y0m-hI-x8L" firstAttribute="top" secondItem="K37-Oo-ZtN" secondAttribute="bottom" constant="72" id="gcc-Ms-9bm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aPm-o3-UuW" secondAttribute="bottom" constant="65" id="iAc-0v-XQ6"/>
+                            <constraint firstItem="ED6-Kp-gGp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="k6j-bK-byO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aPm-o3-UuW" secondAttribute="trailing" constant="61" id="kCo-yL-Vv5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GNV-3D-CwO" secondAttribute="trailing" constant="110" id="l2Y-Ci-gc5"/>
+                            <constraint firstItem="TH8-sK-Zbv" firstAttribute="top" secondItem="y0m-hI-x8L" secondAttribute="bottom" constant="53" id="oNa-IV-731"/>
+                            <constraint firstItem="GNV-3D-CwO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="rm6-0g-ExR"/>
+                            <constraint firstItem="ED6-Kp-gGp" firstAttribute="top" secondItem="mCM-kS-ezY" secondAttribute="bottom" constant="53" id="svL-at-rxe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K37-Oo-ZtN" secondAttribute="trailing" constant="119" id="vAb-Lr-WLY"/>
+                            <constraint firstItem="mCM-kS-ezY" firstAttribute="top" secondItem="K37-Oo-ZtN" secondAttribute="bottom" constant="72" id="vlV-EM-x65"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingBar" destination="aPm-o3-UuW" id="jxR-6G-86c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.637681159420293" y="115.84821428571428"/>
+            <point key="canvasLocation" x="-184.05797101449278" y="-44.196428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ini-N3-COh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aS-Sr-ZTx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="lIH-A2-Ggk" customClass="ViewController" customModule="WordGuessR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kip-7G-ZYN" customClass="controller">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hier komt de Vraag" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-HY-27Y">
+                                <rect key="frame" x="20" y="65" width="374" height="175"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvh-H9-JpZ">
+                                <rect key="frame" x="244" y="663" width="150" height="75"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Volgende"/>
+                                <connections>
+                                    <action selector="nextQuestion:" destination="lIH-A2-Ggk" eventType="touchUpInside" id="e74-9C-4h2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHi-OO-bvB">
+                                <rect key="frame" x="20" y="663" width="150" height="75"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Toon Antwoord"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="lIH-A2-Ggk" eventType="touchUpInside" id="fac-UH-JFr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Klik op Volgende om te beginnen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTE-12-Hf8">
+                                <rect key="frame" x="20" y="485" width="374" height="91"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hier komt de antwoord" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-ZR-Lak">
+                                <rect key="frame" x="20" y="248" width="374" height="141"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ahI-98-ryW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xTE-12-Hf8" firstAttribute="top" secondItem="ahI-98-ryW" secondAttribute="top" constant="441" id="5GH-RT-uhX"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="lGa-ZR-Lak" secondAttribute="trailing" constant="20" id="8dU-Eg-L1q"/>
+                            <constraint firstItem="vfp-HY-27Y" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="DA1-8d-Zry"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="bottom" secondItem="uHi-OO-bvB" secondAttribute="bottom" constant="104" id="EeQ-iT-NRz"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="vfp-HY-27Y" secondAttribute="trailing" constant="20" id="GWi-qA-nJX"/>
+                            <constraint firstItem="lGa-ZR-Lak" firstAttribute="top" secondItem="vfp-HY-27Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Jxc-0C-DHp"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="Tvh-H9-JpZ" secondAttribute="trailing" constant="20" id="UhL-XW-fCl"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="bottom" secondItem="Tvh-H9-JpZ" secondAttribute="bottom" constant="104" id="c99-1Y-BQd"/>
+                            <constraint firstItem="uHi-OO-bvB" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="cBL-dS-2YR"/>
+                            <constraint firstItem="vfp-HY-27Y" firstAttribute="top" secondItem="ahI-98-ryW" secondAttribute="top" constant="21" id="fEi-Ij-jy1"/>
+                            <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="xTE-12-Hf8" secondAttribute="trailing" constant="20" id="hQd-Lp-am7"/>
+                            <constraint firstItem="xTE-12-Hf8" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="rxr-v2-h8n"/>
+                            <constraint firstItem="lGa-ZR-Lak" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="tbB-GW-qes"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentQuestion" destination="vfp-HY-27Y" id="rTy-Sd-4YY"/>
+                        <outlet property="infoLabel" destination="xTE-12-Hf8" id="inb-Tx-Vzm"/>
+                        <outlet property="nextQuestionButton" destination="Tvh-H9-JpZ" id="6gz-SF-NBH"/>
+                        <outlet property="questionAnswer" destination="lGa-ZR-Lak" id="ftw-7B-za5"/>
+                        <outlet property="showAnswerButton" destination="uHi-OO-bvB" id="ZFT-V1-1Vb"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="702.89855072463774" y="-44.196428571428569"/>
         </scene>
     </scenes>
     <resources>
