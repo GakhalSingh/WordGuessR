@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var currentQuestion: UILabel!
-    @IBOutlet weak var questionAnswer: UILabel!
-    @IBOutlet weak var showAnswerButton: UIButton!
-    @IBOutlet weak var nextQuestionButton: UIButton!
-    @IBOutlet weak var infoLabel: UILabel!
+    
     @IBOutlet weak var loadingBar: UIProgressView!
     
     @IBOutlet weak var redMode: UIButton!
@@ -23,17 +19,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueMode: UIButton!
     @IBOutlet weak var purpleMode: UIButton!
     
-    
-    var quizQuestions: [QuizQuestion]?
+    var quizQuestions: [QuizQuestion] = []
+    var filteredQuestions: [QuizQuestion] = []
     var hasLoaded = false
-    var currentQuestionIndex = 0
+    var color = "red"
+
+    
+    enum currentCategory {
+        case redMode
+        case greenMode
+        case yellowMode
+        case blueMode
+        case purpleMode
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupQuiz()
+        getLocalQuizData()
     }
     
-    @IBAction func test(_ sender: UIButton!) {
+    @IBAction func selectMode(_ sender: UIButton!) {
         switch sender {
         case redMode:
             print("red")
@@ -41,6 +46,8 @@ class ViewController: UIViewController {
             print("green")
         case yellowMode:
             print("yellow")
+            filteredQuestions = quizQuestions.filter { $0.category == .yellow }
+            //print("Yellow questions are \(filteredQuestions)")
         case blueMode:
             print("blue")
         case purpleMode:
@@ -50,45 +57,24 @@ class ViewController: UIViewController {
         }
     }
     
-    func setupQuiz() {
-        getLocalQuizData()
-        
-        
+    @IBAction func redClick(_ sender: UIButton) {
+        color = "red";
+        filteredQuestions = quizQuestions.filter { $0.category == .red }
+        performSegue(withIdentifier: "showQuestions", sender: nil)
     }
     
-    func newQuestion() {
-        let questionText = quizQuestions?[currentQuestionIndex].question
-        currentQuestion.text = questionText
-        questionAnswer.text = "🤔🤔🤔"
-        nextQuestionButton.isEnabled = false
-        }
-    
-    func displayAnswer(){
-        let questionAnswerText = quizQuestions?[currentQuestionIndex].answer
-        questionAnswer.text = questionAnswerText
-        nextQuestionButton.isEnabled = true
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+       if segue.identifier == "showQuestions",
+          let questionsViewController = segue.destination as? QuestionsViewController {
+           questionsViewController.filteredQuestions = self.filteredQuestions;
+       }
     }
     
     func getLocalQuizData() {
-        // Call readLocalFile function with the name of the local file (localQuizData)
         if let localData = self.readLocalFile(forName: "localQuizData") {
-            // File exists, now parse 'localData' with the parse function
             self.parse(jsonData: localData)
         }
-    }
-    
-    @IBAction func showAnswer(_ sender: Any) {
-        displayAnswer()
-        showAnswerButton.isEnabled = false
-    }
-    @IBAction func nextQuestion(_ sender: Any) {
-        currentQuestionIndex += 1
-        if currentQuestionIndex == quizQuestions?.count {
-            currentQuestionIndex = 0
-        }
-        newQuestion()
-        showAnswerButton.isEnabled = true
-        infoLabel.text = ""
     }
     
     private func readLocalFile(forName name: String) -> Data? {
@@ -102,7 +88,6 @@ class ViewController: UIViewController {
         }
         return nil
     }
-
     private func parse(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode([QuizQuestion].self,

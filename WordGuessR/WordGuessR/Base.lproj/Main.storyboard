@@ -30,33 +30,20 @@
                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3s-gL-dxo"/>
+                                    <action selector="redClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X5J-V1-Ls8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-Kp-gGp">
                                 <rect key="frame" x="55" y="468" width="135" height="75"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Gezegdes">
+                                <buttonConfiguration key="configuration" style="filled" title="Allerlij">
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BkT-Vc-3g7"/>
-                                    <segue destination="lIH-A2-Ggk" kind="popoverPresentation" popoverAnchorView="ED6-Kp-gGp" id="3DQ-tD-p8y">
+                                    <segue destination="lIH-A2-Ggk" kind="popoverPresentation" identifier="showQuestions" popoverAnchorView="ED6-Kp-gGp" id="3DQ-tD-p8y">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-7n-gFk">
-                                <rect key="frame" x="137" y="567" width="135" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="unnamed">
-                                    <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKK-RF-FQZ"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-o3-UuW">
@@ -75,17 +62,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH8-sK-Zbv">
-                                <rect key="frame" x="218" y="468" width="135" height="75"/>
-                                <color key="tintColor" systemColor="systemTealColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Synoniemen">
-                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXJ-yX-NDV"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0m-hI-x8L">
                                 <rect key="frame" x="218" y="340" width="135" height="75"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
@@ -93,8 +69,25 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Natuur">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH8-sK-Zbv">
+                                <rect key="frame" x="218" y="468" width="135" height="75"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Liedjes">
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-7n-gFk">
+                                <rect key="frame" x="98" y="581" width="214" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Spreekwoorden en Gezegdes">
+                                    <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BWE-JY-j1E"/>
+                                    <action selector="selectMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIi-tr-oEe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="-184.05797101449278" y="-44.196428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Questions View Controller-->
         <scene sceneID="ini-N3-COh">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="lIH-A2-Ggk" customClass="ViewController" customModule="WordGuessR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="lIH-A2-Ggk" customClass="QuestionsViewController" customModule="WordGuessR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kip-7G-ZYN" customClass="controller">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
