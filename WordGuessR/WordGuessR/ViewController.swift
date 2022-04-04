@@ -7,36 +7,8 @@
 
 import UIKit
 
-class Question  {
-    var question: String = "";
-    var answer: String = "";
-    var category: String = "";
-    
-    init()  {}
-    
-    init (question: String, answer: String, category: String)  {
-        self.question = question
-        self.answer = answer
-        self.category = category
-    }
-    
-    func getQuestion()  -> String  {
-        return self.question
-    }
-    func getAnswer()  -> String  {
-        return self.answer
-    }
-    func getCategory()  -> String  {
-        return self.category
-    }
-}
 
 class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     @IBOutlet weak var currentQuestion: UILabel!
     @IBOutlet weak var questionAnswer: UILabel!
@@ -44,26 +16,74 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var loadingBar: UIProgressView!
-
+    
+    @IBOutlet weak var redMode: UIButton!
+    @IBOutlet weak var greenMode: UIButton!
+    @IBOutlet weak var yellowMode: UIButton!
+    @IBOutlet weak var blueMode: UIButton!
+    @IBOutlet weak var purpleMode: UIButton!
+    
+    
+    var quizQuestions: [QuizQuestion]?
+    var hasLoaded = false
     var currentQuestionIndex = 0
-    let QuestionArray = [
-        Question(question: "Reuzel is gesmolten...", answer: "vet", category: "yellow"),
-        Question(question: "De man die een doel verdedigt, noemen we een...", answer: "Keeper", category: "yellow"),
-        Question(question: "Welke scheldwoord is een lijster met diarree?", answer: "Een schijtlijster", category: "yellow"),
-        Question(question: "Een tien met een griffel en een ... van de juffrouw.", answer: "zoen", category: "yellow"),
-        Question(question: "Een bajesklant hoort in de...", answer: "gevangenis", category: "yellow"),
-        Question(question: "Een spionnetje is een kleine...", answer: "buitenspiegel", category: "yellow"),
-        Question(question: "De tegenstelling van bescheiden is...", answer: "brutaal", category: "yellow"),
-        Question(question: "Het binnenste van een appel heet een...", answer: "klokhuis", category: "yellow")]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupQuiz()
+    }
+    
+    @IBAction func test(_ sender: UIButton!) {
+        switch sender {
+        case redMode:
+            print("red")
+        case greenMode:
+            print("green")
+        case yellowMode:
+            print("yellow")
+        case blueMode:
+            print("blue")
+        case purpleMode:
+            print("purple")
+        default:
+            break;
+        }
+    }
+    
+    func setupQuiz() {
+        getLocalQuizData()
+        
+        
+    }
+    
+    func newQuestion() {
+        let questionText = quizQuestions?[currentQuestionIndex].question
+        currentQuestion.text = questionText
+        questionAnswer.text = "🤔🤔🤔"
+        nextQuestionButton.isEnabled = false
+        }
+    
+    func displayAnswer(){
+        let questionAnswerText = quizQuestions?[currentQuestionIndex].answer
+        questionAnswer.text = questionAnswerText
+        nextQuestionButton.isEnabled = true
+    }
+    
+    func getLocalQuizData() {
+        // Call readLocalFile function with the name of the local file (localQuizData)
+        if let localData = self.readLocalFile(forName: "localQuizData") {
+            // File exists, now parse 'localData' with the parse function
+            self.parse(jsonData: localData)
+        }
+    }
     
     @IBAction func showAnswer(_ sender: Any) {
         displayAnswer()
         showAnswerButton.isEnabled = false
     }
-    
     @IBAction func nextQuestion(_ sender: Any) {
         currentQuestionIndex += 1
-        if currentQuestionIndex == QuestionArray.count {
+        if currentQuestionIndex == quizQuestions?.count {
             currentQuestionIndex = 0
         }
         newQuestion()
@@ -71,18 +91,25 @@ class ViewController: UIViewController {
         infoLabel.text = ""
     }
     
-    func newQuestion() {
-        let questionText = QuestionArray[currentQuestionIndex]
-        currentQuestion.text = questionText.question
-        questionAnswer.text = "🤔🤔🤔"
-        nextQuestionButton.isEnabled = false
+    private func readLocalFile(forName name: String) -> Data? {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
         }
-    func displayAnswer(){
-        let questionText = QuestionArray[currentQuestionIndex]
-        questionAnswer.text = questionText.answer
-        nextQuestionButton.isEnabled = true
+        return nil
     }
 
-    
+    private func parse(jsonData: Data) {
+        do {
+            let decodedData = try JSONDecoder().decode([QuizQuestion].self,
+                                                       from: jsonData)
+            self.quizQuestions = decodedData
+        } catch {
+            print("decode error")
+        }
+    }
 }
-

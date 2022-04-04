@@ -29,6 +29,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Tegestellingen" cornerStyle="dynamic">
                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3s-gL-dxo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-Kp-gGp">
                                 <rect key="frame" x="55" y="468" width="135" height="75"/>
@@ -38,12 +41,25 @@
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BkT-Vc-3g7"/>
                                     <segue destination="lIH-A2-Ggk" kind="popoverPresentation" popoverAnchorView="ED6-Kp-gGp" id="3DQ-tD-p8y">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-o3-UuW">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-7n-gFk">
+                                <rect key="frame" x="137" y="567" width="135" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="unnamed">
+                                    <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKK-RF-FQZ"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-o3-UuW">
                                 <rect key="frame" x="55" y="793" width="298" height="4"/>
                             </progressView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K37-Oo-ZtN">
@@ -66,6 +82,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Synoniemen">
                                     <color key="baseBackgroundColor" systemColor="systemTealColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXJ-yX-NDV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0m-hI-x8L">
                                 <rect key="frame" x="218" y="340" width="135" height="75"/>
@@ -74,6 +93,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Natuur">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BWE-JY-j1E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,7 +124,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blueMode" destination="TH8-sK-Zbv" id="zZ7-6r-RKD"/>
+                        <outlet property="greenMode" destination="y0m-hI-x8L" id="bHf-Vp-Hbw"/>
                         <outlet property="loadingBar" destination="aPm-o3-UuW" id="jxR-6G-86c"/>
+                        <outlet property="purpleMode" destination="CzH-7n-gFk" id="fae-Lp-RFB"/>
+                        <outlet property="redMode" destination="mCM-kS-ezY" id="7QU-i5-2nG"/>
+                        <outlet property="yellowMode" destination="ED6-Kp-gGp" id="luC-tQ-qeN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -112,14 +139,13 @@
         <!--View Controller-->
         <scene sceneID="ini-N3-COh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6aS-Sr-ZTx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="lIH-A2-Ggk" customClass="ViewController" customModule="WordGuessR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="lIH-A2-Ggk" customClass="ViewController" customModule="WordGuessR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kip-7G-ZYN" customClass="controller">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hier komt de Vraag" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-HY-27Y">
-                                <rect key="frame" x="20" y="65" width="374" height="175"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hier komt de Vraag" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-HY-27Y">
+                                <rect key="frame" x="20" y="192" width="374" height="48"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
@@ -147,8 +173,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hier komt de antwoord" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-ZR-Lak">
-                                <rect key="frame" x="20" y="248" width="374" height="141"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hier komt de antwoord" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-ZR-Lak">
+                                <rect key="frame" x="20" y="293.33333333333331" width="374" height="95.666666666666686"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" systemColor="systemTealColor"/>
@@ -163,12 +189,13 @@
                             <constraint firstItem="vfp-HY-27Y" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="DA1-8d-Zry"/>
                             <constraint firstItem="ahI-98-ryW" firstAttribute="bottom" secondItem="uHi-OO-bvB" secondAttribute="bottom" constant="104" id="EeQ-iT-NRz"/>
                             <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="vfp-HY-27Y" secondAttribute="trailing" constant="20" id="GWi-qA-nJX"/>
-                            <constraint firstItem="lGa-ZR-Lak" firstAttribute="top" secondItem="vfp-HY-27Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Jxc-0C-DHp"/>
+                            <constraint firstItem="vfp-HY-27Y" firstAttribute="centerX" secondItem="ahI-98-ryW" secondAttribute="centerX" id="Leg-DN-xPN"/>
                             <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="Tvh-H9-JpZ" secondAttribute="trailing" constant="20" id="UhL-XW-fCl"/>
                             <constraint firstItem="ahI-98-ryW" firstAttribute="bottom" secondItem="Tvh-H9-JpZ" secondAttribute="bottom" constant="104" id="c99-1Y-BQd"/>
                             <constraint firstItem="uHi-OO-bvB" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="cBL-dS-2YR"/>
-                            <constraint firstItem="vfp-HY-27Y" firstAttribute="top" secondItem="ahI-98-ryW" secondAttribute="top" constant="21" id="fEi-Ij-jy1"/>
+                            <constraint firstItem="xTE-12-Hf8" firstAttribute="top" secondItem="lGa-ZR-Lak" secondAttribute="bottom" constant="96" id="h8M-BU-oqV"/>
                             <constraint firstItem="ahI-98-ryW" firstAttribute="trailing" secondItem="xTE-12-Hf8" secondAttribute="trailing" constant="20" id="hQd-Lp-am7"/>
+                            <constraint firstItem="xTE-12-Hf8" firstAttribute="top" secondItem="vfp-HY-27Y" secondAttribute="bottom" constant="245" id="qIL-b5-W1u"/>
                             <constraint firstItem="xTE-12-Hf8" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="rxr-v2-h8n"/>
                             <constraint firstItem="lGa-ZR-Lak" firstAttribute="leading" secondItem="ahI-98-ryW" secondAttribute="leading" constant="20" id="tbB-GW-qes"/>
                         </constraints>
@@ -181,6 +208,7 @@
                         <outlet property="showAnswerButton" destination="uHi-OO-bvB" id="ZFT-V1-1Vb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aS-Sr-ZTx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="702.89855072463774" y="-44.196428571428569"/>
         </scene>
@@ -194,6 +222,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

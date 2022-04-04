@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72AFD2A927FAD2980026F575 /* localQuizData.json in Resources */ = {isa = PBXBuildFile; fileRef = 72AFD2A827FAD2980026F575 /* localQuizData.json */; };
+		72AFD2AE27FAD3790026F575 /* JSONFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AFD2AD27FAD3790026F575 /* JSONFunctions.swift */; };
 		72D6901F27DF7C3A008E424C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6901E27DF7C3A008E424C /* AppDelegate.swift */; };
 		72D6902127DF7C3A008E424C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6902027DF7C3A008E424C /* SceneDelegate.swift */; };
 		72D6902327DF7C3A008E424C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6902227DF7C3A008E424C /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72AFD2A827FAD2980026F575 /* localQuizData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = localQuizData.json; path = ../../../../localQuizData.json; sourceTree = "<group>"; };
+		72AFD2AD27FAD3790026F575 /* JSONFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONFunctions.swift; path = ../../../../JSONFunctions.swift; sourceTree = "<group>"; };
 		72D6901B27DF7C3A008E424C /* WordGuessR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGuessR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D6901E27DF7C3A008E424C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72D6902027DF7C3A008E424C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72AFD2A727FAD2130026F575 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				72AFD2A827FAD2980026F575 /* localQuizData.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		72AFD2AA27FAD3070026F575 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				72AFD2AD27FAD3790026F575 /* JSONFunctions.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		72D6901227DF7C3A008E424C = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,8 @@
 		72D6901D27DF7C3A008E424C /* WordGuessR */ = {
 			isa = PBXGroup;
 			children = (
+				72AFD2AA27FAD3070026F575 /* model */,
+				72AFD2A727FAD2130026F575 /* data */,
 				72D6901E27DF7C3A008E424C /* AppDelegate.swift */,
 				72D6902027DF7C3A008E424C /* SceneDelegate.swift */,
 				72D6902227DF7C3A008E424C /* ViewController.swift */,
@@ -231,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AFD2A927FAD2980026F575 /* localQuizData.json in Resources */,
 				72D6902B27DF7C3B008E424C /* LaunchScreen.storyboard in Resources */,
 				72D6902827DF7C3B008E424C /* Assets.xcassets in Resources */,
 				72D6902627DF7C3A008E424C /* Main.storyboard in Resources */,
@@ -259,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D6902327DF7C3A008E424C /* ViewController.swift in Sources */,
+				72AFD2AE27FAD3790026F575 /* JSONFunctions.swift in Sources */,
 				72D6901F27DF7C3A008E424C /* AppDelegate.swift in Sources */,
 				72D6902127DF7C3A008E424C /* SceneDelegate.swift in Sources */,
 			);
