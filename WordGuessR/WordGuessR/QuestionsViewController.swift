@@ -49,6 +49,4 @@ class QuestionsViewController: UIViewController {
         showAnswerButton.isEnabled = true
         infoLabel.text = ""
     }
-
-
 }
